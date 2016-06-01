@@ -72,5 +72,8 @@ const seasonConfig = {
   ]
 };
 
+// Projects the harvest over 12 weeks
 var projectedHarvest = seasonProjection(seasonConfig)(inventory);
-  
+//
+// Projects only the greens over 12 weeks
+var projectedHarvest = seasonProjection(seasonConfig)(inventory.filter(getFilter("color", "green")));
